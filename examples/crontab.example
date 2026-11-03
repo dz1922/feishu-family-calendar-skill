@@ -1,0 +1,4 @@
+# 每天 23:00（Asia/Shanghai）自动完成「当天到期且未完成」的任务，让周期任务滚出下一期
+# 用 crontab -e 粘贴；凭证放在 .env（不要提交到仓库）
+CRON_TZ=Asia/Shanghai
+0 23 * * * cd /path/to/feishu-family-calendar-skill && set -a && . ./.env && set +a && python3 scripts/feishu_family.py complete-today --tasklist "<孩子们清单的guid>" >> /tmp/feishu_family.log 2>&1
