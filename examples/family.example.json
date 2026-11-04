@@ -1,31 +1,128 @@
 {
   "timezone": "Asia/Shanghai",
-  "calendar": {"name": "孩子们", "id": "<创建后填入的日历ID>"},
-  "tasklist": {"name": "孩子们", "guid": "<创建后填入的清单guid>"},
+  "calendar": {
+    "name": "孩子们",
+    "id": "<创建后填入的日历ID>"
+  },
+  "tasklist": {
+    "name": "孩子们",
+    "guid": "<创建后填入的清单guid>"
+  },
   "members": {
-    "爸爸": {"nickname": "大熊", "open_id": "<爸爸的open_id>"},
-    "妈妈": {"nickname": "兔妈", "open_id": "<妈妈的open_id>"},
-    "爷爷": {"nickname": "老松", "open_id": "<爷爷的open_id>"},
-    "奶奶": {"nickname": "花奶奶", "open_id": "<奶奶的open_id>"},
-    "外公": {"nickname": "老船长", "open_id": "<外公的open_id>"},
-    "外婆": {"nickname": "织毛衣外婆", "open_id": "<外婆的open_id>"}
+    "爸爸": {
+      "nickname": "大熊",
+      "open_id": "<爸爸的open_id>"
+    },
+    "妈妈": {
+      "nickname": "兔妈",
+      "open_id": "<妈妈的open_id>"
+    },
+    "爷爷": {
+      "nickname": "老松",
+      "open_id": "<爷爷的open_id>"
+    },
+    "奶奶": {
+      "nickname": "花奶奶",
+      "open_id": "<奶奶的open_id>"
+    },
+    "外公": {
+      "nickname": "老船长",
+      "open_id": "<外公的open_id>"
+    },
+    "外婆": {
+      "nickname": "织毛衣外婆",
+      "open_id": "<外婆的open_id>"
+    }
   },
   "kids": {
-    "大宝": {"nickname": "小鹿", "emoji": "👧", "note": "女孩，一年级"},
-    "二宝": {"nickname": "小豆丁", "emoji": "👦🏻", "note": "男孩，幼儿园中班"}
+    "大宝": {
+      "nickname": "小鹿",
+      "emoji": "👧",
+      "note": "女孩，一年级"
+    },
+    "二宝": {
+      "nickname": "小豆丁",
+      "emoji": "👦🏻",
+      "note": "男孩，幼儿园中班"
+    }
   },
   "weekly_events": [
-    {"title": "👦🏻小豆丁｜放学", "start": "16:00", "end": "16:30", "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"},
-    {"title": "👧小鹿｜舞蹈课", "start": "18:00", "end": "19:00", "rrule": "FREQ=WEEKLY;BYDAY=WE"},
-    {"title": "👦🏻小豆丁｜足球", "start": "09:30", "end": "10:30", "rrule": "FREQ=WEEKLY;BYDAY=SA"}
+    {
+      "title": "👦🏻小豆丁｜放学",
+      "start": "16:00",
+      "end": "16:30",
+      "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+    },
+    {
+      "title": "👧小鹿｜舞蹈课",
+      "start": "18:00",
+      "end": "19:00",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE"
+    },
+    {
+      "title": "👦🏻小豆丁｜足球",
+      "start": "09:30",
+      "end": "10:30",
+      "rrule": "FREQ=WEEKLY;BYDAY=SA"
+    }
   ],
   "weekly_tasks": [
-    {"title": "👦🏻小豆丁｜放学16:00", "byday": "MO,TU,WE,TH,FR", "due": "12:00", "assignees": ["爷爷", "爸爸"]},
-    {"title": "🦌小鹿｜放学15:30", "byday": "MO", "due": "12:00", "assignees": ["外公"]},
-    {"title": "🦌小鹿｜放学16:10", "byday": "TU", "due": "12:00", "assignees": ["爷爷"]},
-    {"title": "🦌小鹿｜放学15:30", "byday": "WE", "due": "12:00", "assignees": ["外公"]},
-    {"title": "🦌小鹿｜放学16:10", "byday": "TH", "due": "12:00", "assignees": ["爷爷"]},
-    {"title": "🦌小鹿｜放学15:00", "byday": "FR", "due": "12:00", "assignees": ["外公"]},
-    {"title": "👧小鹿｜带舞蹈鞋", "byday": "WE", "due": "07:30", "assignees": ["妈妈"]}
+    {
+      "title": "👦🏻小豆丁｜16:00｜放学",
+      "byday": "MO,TU,WE,TH,FR",
+      "due": "12:00",
+      "assignees": [
+        "爷爷",
+        "爸爸"
+      ]
+    },
+    {
+      "title": "🦌小鹿｜15:30｜放学",
+      "byday": "MO",
+      "due": "12:00",
+      "assignees": [
+        "外公"
+      ]
+    },
+    {
+      "title": "🦌小鹿｜16:10｜放学",
+      "byday": "TU",
+      "due": "12:00",
+      "assignees": [
+        "爷爷"
+      ]
+    },
+    {
+      "title": "🦌小鹿｜15:30｜放学",
+      "byday": "WE",
+      "due": "12:00",
+      "assignees": [
+        "外公"
+      ]
+    },
+    {
+      "title": "🦌小鹿｜16:10｜放学",
+      "byday": "TH",
+      "due": "12:00",
+      "assignees": [
+        "爷爷"
+      ]
+    },
+    {
+      "title": "🦌小鹿｜15:00｜放学",
+      "byday": "FR",
+      "due": "12:00",
+      "assignees": [
+        "外公"
+      ]
+    },
+    {
+      "title": "👧小鹿｜18:00｜带舞蹈鞋",
+      "byday": "WE",
+      "due": "07:30",
+      "assignees": [
+        "妈妈"
+      ]
+    }
   ]
 }

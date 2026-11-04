@@ -28,7 +28,7 @@
 | | 共享日历「孩子们」 | 共享任务清单「孩子们」 |
 |---|---|---|
 | 负责 | 几点、在哪，到点提醒 | 谁去做：接送、带装备、准备材料 |
-| 例子 | 👧小鹿｜舞蹈课 周三 18:00 | 🦌小鹿｜放学16:10 → 指派老船长 |
+| 例子 | 👧小鹿｜舞蹈课 周三 18:00 | 🦌小鹿｜16:10｜放学 → 指派老船长 |
 
 日历让全家看到「今天有什么」，任务让每个人知道「这件是我的」。
 
@@ -72,13 +72,13 @@ python3 scripts/feishu_family.py add-event --calendar <日历ID> --title "👦�
   --date 2026-11-02 --start 16:00 --end 16:30 --rrule "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
 
 # 任务：工作日小豆丁放学，老松接，大熊知情；自动拆成 5 条
-python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "👦🏻小豆丁｜放学16:00" \
+python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "👦🏻小豆丁｜16:00｜放学" \
   --byday MO,TU,WE,TH,FR --due-time 12:00 --assignee <爷爷的open_id> <爸爸的open_id>
 
 # 小鹿每天放学时间不同，按天分别指派
-python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "🦌小鹿｜放学16:10" \
+python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "🦌小鹿｜16:10｜放学" \
   --byday TU,TH --assignee <爷爷的open_id>
-python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "🦌小鹿｜放学15:30" \
+python3 scripts/feishu_family.py add-task --tasklist <清单guid> --title "🦌小鹿｜15:30｜放学" \
   --byday MO,WE --assignee <外公的open_id>
 ```
 所有写操作都可先加 `--dry-run` 看请求内容。完整示例见 `examples/family.example.json`。
@@ -91,8 +91,8 @@ crontab -e   # 粘贴 examples/crontab.example 的内容
 
 ## 规则与规范
 
-- **标题短**，孩子前缀区分：女孩 👧、男孩 👦🏻，如「👧小鹿｜带舞蹈鞋」「👦🏻小豆丁｜足球」。接送类可用「🦌小鹿｜放学16:10」，标题里直接写放学时间。
-- **接送任务 due 设当天 12:00**，中午就提醒「今天谁去接」。
+- **任务标题格式：`<emoji><昵称>｜HH:MM｜事项`**。中间写**活动实际时间**，不是提醒/due 时间。例：「👧小鹿｜18:30｜乐读」「🦌小鹿｜16:10｜放学」「👦🏻小豆丁｜16:45｜足球」。这样中午 12:00 提醒接送时，负责人仍能一眼看到真正放学点。
+- **接送任务 due 设当天 12:00**，中午就提醒「今天谁去接」；真正放学时间只写在标题中间那一截。
 - **提醒**：日历 `minutes=0`、任务 `relative_fire_minute=0`，都表示到点提醒。
 - **临时事项**也走双模式。老师发来的周通知（图片/文字），提取要准备的东西：周日 19:00 提醒准备本周事项；写明了具体某天的，提前一天 19:00 再提醒。
 
@@ -116,7 +116,7 @@ A：只需要看飞书机器人/任务的提醒消息，点「完成」即可；
 A：设置 `FEISHU_BASE=https://open.larksuite.com`。
 
 **Q：放学时间改了？**  
-A：删掉对应那一天的任务，用新标题重建；其他天不受影响——这也是按天拆分的好处。
+A：删掉对应那一天的任务，用新标题（人物｜新时间｜放学）重建；其他天不受影响——这也是按天拆分的好处。
 
 ## 目录
 
